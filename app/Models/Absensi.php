@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Absensi extends Model
 {
     protected $guarded =[];
+
+    protected $primaryKey = "id_absensi";
 }

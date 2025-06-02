@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jabatan extends Model
 {
     protected $guarded =[];
+
+    
+    protected $primaryKey = "id_jabatan";
 }
