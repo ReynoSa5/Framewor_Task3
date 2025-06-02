@@ -22,24 +22,13 @@ class JabatanController extends Controller
 
     public function simpan(Request $request)
     {
-        // $request->validate([
-        //     "id_karyawan" => "required|integer",
-        //     "tanggal" => "required|date",
-        //     "jam_masuk" => "required|date_format:H:i",
-        //     "jam_keluar" => "required|date_format:H:i"
-        // ], [
-        //     "id_karyawan.required" => "ID karyawan tidak boleh kosong",
-        //     "id_karyawan.integer" => "ID karyawan harus angka",
-
-        //     "tanggal.required" => "Tanggal tidak boleh kosong",
-        //     "tanggal.date" => "Format tanggal tidak sesuai",
-
-        //     "jam_masuk.required" => "Jam masuk tidak boleh kosong",
-        //     "jam_masuk.date_format" => "Format jam masuk harus HH:MM",
-
-        //     "jam_keluar.required" => "Jam keluar tidak boleh kosong",
-        //     "jam_keluar.date_format" => "Format jam keluar harus HH:MM",
-        // ]);
+         $request->validate([
+        "gaji_pokok" => "required|numeric|min:1000000"
+    ], [
+        "gaji_pokok.required" => "Gaji pokok tidak boleh kosong",
+        "gaji_pokok.numeric" => "Gaji pokok harus berupa angka",
+        "gaji_pokok.min" => "Gaji pokok minimal Rp1.000.000",
+    ]);
 
         Jabatan::create($request->all());
 
@@ -51,5 +40,29 @@ class JabatanController extends Controller
         return view('jabatan.editjabatan', [
             'data' => Jabatan::find($edit)
         ]);
+    }
+
+    public function update(Request $request, $edit)
+    {
+        $request->validate([
+        "gaji_pokok" => "required|numeric|min:1000000"
+    ], [
+        "gaji_pokok.required" => "Gaji pokok tidak boleh kosong",
+        "gaji_pokok.numeric" => "Gaji pokok harus berupa angka",
+        "gaji_pokok.min" => "Gaji pokok minimal Rp1.000.000",
+    ]);
+
+        Jabatan::find($edit)->update($request->all());
+
+        return redirect('/jabatan')->with('pesan', 'Data absensi berhasil diupdate');
+    }
+
+    public function hapus($edit)
+    {
+         $r = new Jabatan();
+
+        $r->find($edit)->delete();
+        
+        return redirect('/jabatan')->with('pesan', 'Data absensi berhasil dihapus');
     }
 }

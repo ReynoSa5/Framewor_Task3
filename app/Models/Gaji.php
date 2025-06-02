@@ -10,4 +10,5 @@ class Gaji extends Model
     protected $guarded =[];
 
     
+    protected $primaryKey = "id_gaji";
 }

@@ -82,7 +82,7 @@ class AbsensiController extends Controller
 
     public function hapus($edit)
     {
-         $r = new absensi();
+         $r = new Absensi();
 
         $r->find($edit)->delete();
         

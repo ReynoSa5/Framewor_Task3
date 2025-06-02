@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="id_karyawan">ID Karyawan</label>
                     <input type="number" name="id_karyawan" id="id_karyawan" class="form-control"
-                        value="{{ old('id_absensi', $data->id_karyawan) }}">
+                        value="{{ old('id_karyawan', $data->id_karyawan) }}">
                 </div>
 
                 <div class="form-group">

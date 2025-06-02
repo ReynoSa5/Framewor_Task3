@@ -48,6 +48,6 @@ Route::get('/jabatan/tambah',[JabatanController::class,'tambah']);
 Route::post('/jabatan/tambah',[JabatanController::class,'simpan']);
 
 
-Route::get('/jabatan/edit/{edit}', [AbsensiController::class, 'edit']);
-Route::post('/jabatan/edit/{edit}', [AbsensiController::class, 'update']);
-Route::get('/jabatan/hapus/{edit}', [AbsensiController::class, 'hapus']);
+Route::get('/jabatan/edit/{edit}', [JabatanController::class, 'edit']);
+Route::post('/jabatan/edit/{edit}', [JabatanController::class, 'update']);
+Route::get('/jabatan/hapus/{edit}', [JabatanController::class, 'hapus']);

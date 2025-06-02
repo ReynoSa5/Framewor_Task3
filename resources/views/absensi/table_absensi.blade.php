@@ -25,6 +25,7 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">ID Karyawan</th>
+                        <th scope="col">Tanggal</th>
                         <th scope="col">Jam Masuk</th>
                         <th scope="col">Jam Keluar </th>
                         <th scope="col">Edit </th>
@@ -35,6 +36,7 @@
                         <tr>
                             <th scope="row">{{ $item['id_absensi'] }}</th>
                             <td>{{ $item['id_karyawan'] }}</td>
+                            <td>{{ $item['tanggal'] }}</td>
                             <td>{{ $item['jam_masuk'] }}</td>
                             <td>{{ $item['jam_masuk'] }}</td>
                             <td>

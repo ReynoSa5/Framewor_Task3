@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('judul-halaman')
-    Halaman - Absensi
+    Halaman - Jabatan
 @endsection
 
 @section('judul')
-    Absensi
+    Jabatan
 @endsection
 
 @section('konten-utama')
@@ -16,7 +16,7 @@
     @endif
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="h5 text-center">Table Absensi</h5>
+            <h5 class="h5 text-center">Table Jabatan</h5>
             <a href="/jabatan/tambah" class="btn btn-success">Tambah</a>
         </div>
         <div class="card-body">
